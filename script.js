@@ -424,4 +424,3 @@ $("mastered").addEventListener("click",()=>{const idx=activeIndex();if(idx<0)ret
 $("review").addEventListener("click",()=>{const idx=activeIndex();if(idx<0)return;progress.review=[...new Set([...progress.review,idx])];progress.mastered=progress.mastered.filter(x=>x!==idx);saveProgress();go(1);});
 document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.code==="Space"){e.preventDefault();$("flashcard").click();}if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1);});
 renderAll();
-]
