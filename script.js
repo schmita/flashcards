@@ -42,9 +42,7 @@ const initialCards = [
   {
     "term": "Form 10-Q",
     "definition": "A public company’s quarterly report filed with the SEC for the first three fiscal quarters of its year. It provides updated financial statements and information about results, risks, and operations; it is generally less comprehensive than Form 10-K."
-  }
-,
-
+  },
   {
     "term": "Forward-Looking Statement",
     "definition": "A statement about expected future events or performance, such as projected revenue, earnings, plans, or goals. These statements are based on current assumptions and are subject to risks and uncertainties that can cause actual results to differ."
@@ -96,9 +94,7 @@ const initialCards = [
   {
     "term": "Selective Disclosure",
     "definition": "Sharing important company information with only selected people—such as certain analysts or investors—instead of the market broadly. When the information is material and nonpublic, Regulation FD may require the company to disclose it publicly as well."
-  }
-,
-
+  },
   {
     "term": "Balance Sheet",
     "definition": "A financial statement showing a company’s assets, liabilities, and shareholders’ equity at a specific point in time. It follows the equation: Assets = Liabilities + Shareholders’ Equity."
@@ -186,8 +182,7 @@ const initialCards = [
   {
     "term": "Year-over-Year (YoY)",
     "definition": "A comparison of a metric with the same period one year earlier—for example, this quarter’s revenue compared with the same quarter last year. YoY comparisons help account for some seasonal patterns."
-  }
- },
+  },
   {
     "term": "Assets",
     "definition": "Resources a business owns or controls that are expected to provide future economic benefits."
@@ -356,6 +351,7 @@ const initialCards = [
     "term": "Liquidity",
     "definition": "A company’s ability to meet short-term financial obligations as they become due."
   }
+];
 
 const STORAGE_KEY = "study-bloom-progress-v1";
 let cards = [...initialCards];
