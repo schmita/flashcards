@@ -387,9 +387,31 @@ function renderProgress(){
  $("knownCount").textContent=mastered;$("percent").textContent=Math.round(mastered/total*100)+"% mastered";$("progressBar").style.width=(mastered/total*100)+"%";
 }
 function renderList(){
- const list=visibleOrder();$("listCount").textContent=list.length+" terms";const host=$("termList");host.innerHTML="";
- if(!list.length){host.innerHTML='<div class="empty">No terms match your search.</div>';return;}
- list.forEach((idx,n)=>{const card=cards[idx], row=document.createElement("button");row.className="term-row"+(progress.mastered.includes(idx)?" mastered":"")+(idx===activeIndex()?" selected":"");row.innerHTML=`<span class="number">${String(n+1).padStart(2,"0")}</span><span class="term-name"></span><span class="status">${progress.mastered.includes(idx)?"♡":progress.review.includes(idx)?"↻":"›"}</span>`;row.querySelector(".term-name").textContent=card.term;row.addEventListener("click",()=>{current=n;flipped=false;renderAll();window.scrollTo({top:0,behavior:"smooth"});});host.appendChild(row);});
+ // Always show every card in Quick Review, regardless of the search filter above.
+ const list=order;$("listCount").textContent=list.length+" terms";const host=$("termList");host.innerHTML="";
+ if(!list.length){host.innerHTML='<div class="empty">No terms in this deck yet.</div>';return;}
+ list.forEach((idx,n)=>{const card=cards[idx], row=document.createElement("button");row.className="term-row"+(progress.mastered.includes(idx)?" mastered":"")+(idx===activeIndex()?" selected":"");row.innerHTML=`<span class="number">${String(n+1).padStart(2,"0")}</span><span class="term-content"><span class="term-name"></span><span class="term-def"></span></span><span class="status">${progress.mastered.includes(idx)?"♡":progress.review.includes(idx)?"↻":"›"}</span>`;row.querySelector(".term-name").textContent=card.term;row.querySelector(".term-def").textContent=card.definition;row.addEventListener("click",()=>{filter="";$("search").value="";current=order.indexOf(idx);flipped=false;renderAll();window.scrollTo({top:0,behavior:"smooth"});});host.appendChild(row);});
+}
+function celebrateMastery(){
+ // Brief, accessible confetti burst; no third-party library required.
+ if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+ const layer=document.createElement("div");
+ layer.className="confetti-layer";
+ layer.setAttribute("aria-hidden","true");
+ const symbols=["✦","✧","♡","●","✿"];
+ for(let i=0;i<42;i++){
+  const piece=document.createElement("span");
+  piece.className="confetti-piece";
+  piece.textContent=symbols[i%symbols.length];
+  piece.style.left=(Math.random()*100)+"%";
+  piece.style.setProperty("--fall-distance",(110+Math.random()*70)+"vh");
+  piece.style.setProperty("--spin",(Math.random()*900-450)+"deg");
+  piece.style.setProperty("--delay",(Math.random()*180)+"ms");
+  piece.style.setProperty("--drift",(Math.random()*180-90)+"px");
+  layer.appendChild(piece);
+ }
+ document.body.appendChild(layer);
+ window.setTimeout(()=>layer.remove(),2600);
 }
 function renderAll(){renderCard();renderProgress();renderList();const n=cards.length;const subjectCount=document.querySelector(".subject b");if(subjectCount)subjectCount.textContent=n;const subheading=document.querySelector(".subheading");if(subheading)subheading.textContent="Corporate Finance · "+n+" cards";}
 function go(delta){const list=visibleOrder();if(!list.length)return;current=(current+delta+list.length)%list.length;flipped=false;renderAll();}
@@ -398,7 +420,7 @@ $("prev").addEventListener("click",()=>go(-1));$("next").addEventListener("click
 $("shuffle").addEventListener("click",()=>{for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}current=0;flipped=false;renderAll();});
 $("reset").addEventListener("click",()=>{if(confirm("Reset your mastered/review progress for this deck?")){progress={mastered:[],review:[]};saveProgress();current=0;flipped=false;renderAll();}});
 $("search").addEventListener("input",e=>{filter=e.target.value;current=0;flipped=false;renderAll();});
-$("mastered").addEventListener("click",()=>{const idx=activeIndex();if(idx<0)return;progress.mastered=[...new Set([...progress.mastered,idx])];progress.review=progress.review.filter(x=>x!==idx);saveProgress();go(1);});
+$("mastered").addEventListener("click",()=>{const idx=activeIndex();if(idx<0)return;const newlyMastered=!progress.mastered.includes(idx);progress.mastered=[...new Set([...progress.mastered,idx])];progress.review=progress.review.filter(x=>x!==idx);saveProgress();if(newlyMastered)celebrateMastery();go(1);});
 $("review").addEventListener("click",()=>{const idx=activeIndex();if(idx<0)return;progress.review=[...new Set([...progress.review,idx])];progress.mastered=progress.mastered.filter(x=>x!==idx);saveProgress();go(1);});
 document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.code==="Space"){e.preventDefault();$("flashcard").click();}if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1);});
 renderAll();
