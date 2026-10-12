@@ -43,6 +43,60 @@ const initialCards = [
     "term": "Form 10-Q",
     "definition": "A public company’s quarterly report filed with the SEC for the first three fiscal quarters of its year. It provides updated financial statements and information about results, risks, and operations; it is generally less comprehensive than Form 10-K."
   }
+,
+
+  {
+    "term": "Forward-Looking Statement",
+    "definition": "A statement about expected future events or performance, such as projected revenue, earnings, plans, or goals. These statements are based on current assumptions and are subject to risks and uncertainties that can cause actual results to differ."
+  },
+  {
+    "term": "General Counsel",
+    "definition": "The lawyer who leads an organization’s legal function and advises executives and the board on legal issues, compliance, contracts, litigation, and regulatory risks. In some companies, the General Counsel also serves as the Chief Legal Officer."
+  },
+  {
+    "term": "Material Information",
+    "definition": "Information that a reasonable investor would likely consider important when deciding whether to buy, sell, or hold a security, or that could significantly affect its market price. Whether information is material depends on the facts and circumstances."
+  },
+  {
+    "term": "Non-Deal Road Show",
+    "definition": "A series of meetings in which a company’s management meets with investors and analysts to discuss the business, strategy, and outlook, without a new securities offering being marketed. Companies must still follow applicable disclosure rules."
+  },
+  {
+    "term": "Regulation Fair Disclosure (Reg FD)",
+    "definition": "An SEC regulation intended to prevent public companies from selectively sharing material nonpublic information with certain market professionals or shareholders. When covered selective disclosure occurs, the company generally must make the information public simultaneously or promptly, depending on whether the disclosure was intentional."
+  },
+  {
+    "term": "Quarterly Earnings Call",
+    "definition": "A call, often held after a quarterly earnings release, where company executives discuss financial results and may answer questions from analysts and investors. It commonly includes prepared remarks and a question-and-answer session."
+  },
+  {
+    "term": "Quiet Period",
+    "definition": "A period when a company or certain participants limit communications about the company, often around an offering or before an earnings announcement. The meaning and restrictions depend on the context, securities rules, and company policy; it is not one universal prohibition on speaking."
+  },
+  {
+    "term": "Safe Harbor Language",
+    "definition": "Wording accompanying forward-looking statements that explains they are predictions subject to risks and uncertainties, often pointing readers to risk factors and cautioning that actual results may differ. Such language may support legal protections where statutory requirements are met, but it does not automatically shield every statement."
+  },
+  {
+    "term": "The Sarbanes–Oxley Act (SOX)",
+    "definition": "A U.S. law enacted in 2002 to strengthen corporate accountability, financial reporting, and auditor independence after major accounting scandals. Among other requirements, it established internal-control reporting obligations for many public companies and certification duties for certain executives."
+  },
+  {
+    "term": "Schedule 13D",
+    "definition": "An SEC filing generally required when a person or group beneficially owns more than 5% of a covered class of a public company’s voting equity securities and has an activist or otherwise non-passive purpose. It discloses ownership and relevant intentions; certain eligible passive investors may use Schedule 13G instead."
+  },
+  {
+    "term": "The Securities Act of 1933",
+    "definition": "A U.S. federal law that primarily governs the offer and sale of securities. It requires securities offerings to be registered with the SEC unless an exemption applies and aims to ensure investors receive important information."
+  },
+  {
+    "term": "The Securities Exchange Act of 1934",
+    "definition": "A U.S. federal law that regulates securities markets and secondary trading, established the SEC, and requires ongoing reporting by many public companies. It also addresses areas such as proxy solicitations, tender offers, and fraud in securities trading."
+  },
+  {
+    "term": "Selective Disclosure",
+    "definition": "Sharing important company information with only selected people—such as certain analysts or investors—instead of the market broadly. When the information is material and nonpublic, Regulation FD may require the company to disclose it publicly as well."
+  }
 ];
 const STORAGE_KEY = "study-bloom-progress-v1";
 let cards = [...initialCards];
