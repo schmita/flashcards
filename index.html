@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f8">
+<title>Study Bloom | Flashcards</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Study Bloom home"><span class="brand-icon">✿</span> study bloom</a>
+  <span class="top-note">your little study space</span>
+</header>
+<main class="layout">
+  <aside class="sidebar">
+    <p class="eyebrow">YOUR LIBRARY</p>
+    <h2>Subjects</h2>
+    <button class="subject active" id="subjectButton"><span>♡</span><span>Investor Relations<br><small>Corporate Finance</small></span><b>11</b></button>
+    <div class="sidebar-tip"><span>✧</span><p><strong>Little by little.</strong><br>Every card is a step forward.</p></div>
+    <p class="small-note">More subjects can be added by editing <code>script.js</code>.</p>
+  </aside>
+  <section class="study">
+    <div class="heading-row"><div><p class="eyebrow">CURRENT DECK</p><h1>Investor Relations <span>♡</span></h1><p class="subheading">Corporate Finance · 11 cards</p></div><div class="streak">✧ <span id="knownCount">0</span> mastered</div></div>
+    <div class="toolbar">
+      <label class="search"><span>⌕</span><input id="search" placeholder="Find a term..." aria-label="Search terms"></label>
+      <button id="shuffle" class="soft-button">⤨ Shuffle</button>
+      <button id="reset" class="soft-button">↺ Reset</button>
+    </div>
+    <div class="progress-wrap"><div class="progress-label"><span id="progressText">Card 1 of 11</span><span id="percent">0% mastered</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+    <button class="flashcard" id="flashcard" aria-label="Flip flashcard" aria-pressed="false">
+      <span class="card-top"><span id="sideLabel">TERM</span><span>CLICK TO FLIP ↻</span></span>
+      <span class="card-center"><span class="sparkle">✧</span><span id="cardText">Analyst/Investor Day</span></span>
+      <span class="card-bottom"><span id="cardIndex">01 / 11</span><span id="flipHint">Tap to reveal definition</span></span>
+    </button>
+    <div class="controls"><button class="nav-button" id="prev">← Previous</button><button class="nav-button primary" id="next">Next card →</button></div>
+    <div class="recall"><p>Did you know this one?</p><div><button class="recall-btn nope" id="review">↻ Need to review</button><button class="recall-btn yep" id="mastered">♡ Got it!</button></div></div>
+    <section class="all-cards"><div class="list-heading"><div><p class="eyebrow">QUICK REVIEW</p><h2>All your terms</h2></div><span id="listCount">11 terms</span></div><div id="termList" class="term-list"></div></section>
+    <footer>Made for your next study session <span>♡</span></footer>
+  </section>
+</main>
+<script src="script.js"></script>
+</body></html>
