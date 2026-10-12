@@ -387,9 +387,10 @@ function renderProgress(){
  $("knownCount").textContent=mastered;$("percent").textContent=Math.round(mastered/total*100)+"% mastered";$("progressBar").style.width=(mastered/total*100)+"%";
 }
 function renderList(){
- const list=visibleOrder();$("listCount").textContent=list.length+" terms";const host=$("termList");host.innerHTML="";
- if(!list.length){host.innerHTML='<div class="empty">No terms match your search.</div>';return;}
- list.forEach((idx,n)=>{const card=cards[idx], row=document.createElement("button");row.className="term-row"+(progress.mastered.includes(idx)?" mastered":"")+(idx===activeIndex()?" selected":"");row.innerHTML=`<span class="number">${String(n+1).padStart(2,"0")}</span><span class="term-name"></span><span class="status">${progress.mastered.includes(idx)?"♡":progress.review.includes(idx)?"↻":"›"}</span>`;row.querySelector(".term-name").textContent=card.term;row.addEventListener("click",()=>{current=n;flipped=false;renderAll();window.scrollTo({top:0,behavior:"smooth"});});host.appendChild(row);});
+ // Keep the complete deck visible in Quick Review, even while the flashcard search is filtering the study card.
+ const list=order;$("listCount").textContent=list.length+" terms";const host=$("termList");host.innerHTML="";
+ if(!list.length){host.innerHTML='<div class="empty">No terms in this deck yet.</div>';return;}
+ list.forEach((idx,n)=>{const card=cards[idx], row=document.createElement("button");row.className="term-row"+(progress.mastered.includes(idx)?" mastered":"")+(idx===activeIndex()?" selected":"");row.innerHTML=`<span class="number">${String(n+1).padStart(2,"0")}</span><span class="term-content"><span class="term-name"></span><span class="term-def"></span></span><span class="status">${progress.mastered.includes(idx)?"♡":progress.review.includes(idx)?"↻":"›"}</span>`;row.querySelector(".term-name").textContent=card.term;row.querySelector(".term-def").textContent=card.definition;row.addEventListener("click",()=>{filter="";$("search").value="";current=order.indexOf(idx);flipped=false;renderAll();window.scrollTo({top:0,behavior:"smooth"});});host.appendChild(row);});
 }
 function renderAll(){renderCard();renderProgress();renderList();const n=cards.length;const subjectCount=document.querySelector(".subject b");if(subjectCount)subjectCount.textContent=n;const subheading=document.querySelector(".subheading");if(subheading)subheading.textContent="Corporate Finance · "+n+" cards";}
 function go(delta){const list=visibleOrder();if(!list.length)return;current=(current+delta+list.length)%list.length;flipped=false;renderAll();}
