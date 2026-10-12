@@ -190,12 +190,172 @@ const initialCards = [
  },
   {
     "term": "Assets",
-    "definition": "any resource owned or controlled by a business or economic entity that holds monetary value and is expected to provide future economic benefits"
-  }
+    "definition": "Resources a business owns or controls that are expected to provide future economic benefits."
+  },
   {
-  "term" "Liabilities"
-  "definition": "a present financial obligation or debt that a person or company owes to an outside part"
-}
+    "term": "Liabilities",
+    "definition": "Financial obligations or debts a person or company owes to another party."
+  },
+  {
+    "term": "SEC Filing Dates",
+    "definition": "Deadlines for required SEC reports and disclosures; timing varies by filing type and company status."
+  },
+  {
+    "term": "Safe Harbor",
+    "definition": "A legal provision that may protect qualifying forward-looking statements when applicable requirements are met."
+  },
+  {
+    "term": "Accounts Payable (A/P)",
+    "definition": "Money a company owes suppliers and other creditors for goods or services already received."
+  },
+  {
+    "term": "Accounts Receivable (A/R)",
+    "definition": "Money customers owe a company for goods or services already provided."
+  },
+  {
+    "term": "Accrual Accounting",
+    "definition": "Records revenue when earned and expenses when incurred, even if cash changes hands at another time."
+  },
+  {
+    "term": "Cash-Basis Accounting",
+    "definition": "Records revenue when cash is received and expenses when cash is paid."
+  },
+  {
+    "term": "Going Concern",
+    "definition": "The accounting assumption that a business will continue operating for the foreseeable future."
+  },
+  {
+    "term": "Corporate Insolvency",
+    "definition": "A situation in which a company cannot pay debts when due or fails another applicable insolvency test."
+  },
+  {
+    "term": "Bankruptcy Types",
+    "definition": "Legal bankruptcy processes can permit eligible debtors to reorganize debts or liquidate assets."
+  },
+  {
+    "term": "Tangible Assets",
+    "definition": "Physical resources with economic value, such as buildings, equipment, and inventory."
+  },
+  {
+    "term": "Intangible Assets",
+    "definition": "Nonphysical resources with economic value, such as patents, trademarks, and certain rights."
+  },
+  {
+    "term": "Goodwill",
+    "definition": "An intangible asset generally recognized in a business acquisition when price exceeds the fair value of identifiable net assets acquired."
+  },
+  {
+    "term": "Goodwill Impairment",
+    "definition": "A write-down when goodwill’s recorded amount is not supported under the applicable accounting impairment test."
+  },
+  {
+    "term": "Materiality",
+    "definition": "The importance of information to a reasonable investor’s decision or the total mix of available information."
+  },
+  {
+    "term": "Material Disclosure Rules",
+    "definition": "Requirements to disclose certain material information accurately and in a timely manner under applicable securities laws."
+  },
+  {
+    "term": "Material Nonpublic Information",
+    "definition": "Important company information that has not been broadly disclosed to the public."
+  },
+  {
+    "term": "Insider Trading",
+    "definition": "Trading securities in violation of applicable law or duties, including certain trades based on material nonpublic information."
+  },
+  {
+    "term": "Shadow Trading",
+    "definition": "Trading securities of a related company based on material nonpublic information about another company."
+  },
+  {
+    "term": "Employee Stock Purchase Plan (ESPP)",
+    "definition": "An employee benefit plan allowing eligible employees to purchase company shares, often at a discount."
+  },
+  {
+    "term": "Blackout Period Exception",
+    "definition": "A specific circumstance in which a trade may be permitted despite a blackout restriction; rules depend on law and company policy."
+  },
+  {
+    "term": "Current Assets",
+    "definition": "Assets expected to be converted into cash, sold, or used up within one year or the operating cycle, whichever is longer."
+  },
+  {
+    "term": "Cash and Cash Equivalents",
+    "definition": "Cash and highly liquid short-term investments readily convertible into known amounts of cash."
+  },
+  {
+    "term": "Inventory",
+    "definition": "Goods held for sale or materials used to produce goods for sale."
+  },
+  {
+    "term": "Prepaid Expenses",
+    "definition": "Payments made in advance for future benefits, such as insurance or rent; initially recorded as assets."
+  },
+  {
+    "term": "Noncurrent Assets",
+    "definition": "Assets not classified as current, generally held for long-term use or benefit."
+  },
+  {
+    "term": "Property, Plant, and Equipment (PP&E)",
+    "definition": "Long-term tangible assets used in operations, such as buildings, machinery, and vehicles."
+  },
+  {
+    "term": "Accumulated Depreciation",
+    "definition": "Total depreciation recorded against a depreciable asset; it reduces the asset’s carrying amount."
+  },
+  {
+    "term": "Current Liabilities",
+    "definition": "Obligations expected to be settled within one year or the operating cycle, whichever is longer."
+  },
+  {
+    "term": "Accrued Expenses",
+    "definition": "Expenses already incurred but not yet paid, such as wages or interest payable."
+  },
+  {
+    "term": "Short-Term Debt",
+    "definition": "Borrowings due within the short-term reporting period under applicable accounting rules."
+  },
+  {
+    "term": "Long-Term Liabilities",
+    "definition": "Obligations generally due beyond the next year or operating cycle."
+  },
+  {
+    "term": "Long-Term Debt",
+    "definition": "Borrowings such as bonds or loans due beyond the short-term period."
+  },
+  {
+    "term": "Shareholders’ Equity",
+    "definition": "The residual interest in a company’s assets after liabilities are deducted."
+  },
+  {
+    "term": "Retained Earnings",
+    "definition": "Cumulative net income retained in the business, less dividends and other applicable adjustments."
+  },
+  {
+    "term": "Common Stock",
+    "definition": "An equity account representing amounts attributable to common shares issued by a company."
+  },
+  {
+    "term": "Additional Paid-In Capital (APIC)",
+    "definition": "Amounts shareholders paid for stock above its stated par value."
+  },
+  {
+    "term": "Treasury Stock",
+    "definition": "A company’s own shares it has repurchased; generally reduces shareholders’ equity."
+  },
+  {
+    "term": "Working Capital",
+    "definition": "Current assets minus current liabilities; a measure related to short-term liquidity."
+  },
+  {
+    "term": "Debt-to-Equity Ratio",
+    "definition": "A leverage measure comparing debt with shareholders’ equity; calculation varies by definition."
+  },
+  {
+    "term": "Liquidity",
+    "definition": "A company’s ability to meet short-term financial obligations as they become due."
+  }
 ];
 const STORAGE_KEY = "study-bloom-progress-v1";
 let cards = [...initialCards];
@@ -231,7 +391,7 @@ function renderList(){
  if(!list.length){host.innerHTML='<div class="empty">No terms match your search.</div>';return;}
  list.forEach((idx,n)=>{const card=cards[idx], row=document.createElement("button");row.className="term-row"+(progress.mastered.includes(idx)?" mastered":"")+(idx===activeIndex()?" selected":"");row.innerHTML=`<span class="number">${String(n+1).padStart(2,"0")}</span><span class="term-name"></span><span class="status">${progress.mastered.includes(idx)?"♡":progress.review.includes(idx)?"↻":"›"}</span>`;row.querySelector(".term-name").textContent=card.term;row.addEventListener("click",()=>{current=n;flipped=false;renderAll();window.scrollTo({top:0,behavior:"smooth"});});host.appendChild(row);});
 }
-function renderAll(){renderCard();renderProgress();renderList();}
+function renderAll(){renderCard();renderProgress();renderList();const n=cards.length;const subjectCount=document.querySelector(".subject b");if(subjectCount)subjectCount.textContent=n;const subheading=document.querySelector(".subheading");if(subheading)subheading.textContent="Corporate Finance · "+n+" cards";}
 function go(delta){const list=visibleOrder();if(!list.length)return;current=(current+delta+list.length)%list.length;flipped=false;renderAll();}
 $("flashcard").addEventListener("click",()=>{if(activeIndex()<0)return;flipped=!flipped;renderCard();});
 $("prev").addEventListener("click",()=>go(-1));$("next").addEventListener("click",()=>go(1));
