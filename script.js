@@ -187,12 +187,15 @@ const initialCards = [
     "term": "Year-over-Year (YoY)",
     "definition": "A comparison of a metric with the same period one year earlier—for example, this quarter’s revenue compared with the same quarter last year. YoY comparisons help account for some seasonal patterns."
   }
-];
  },
   {
     "term": "Assets",
     "definition": "any resource owned or controlled by a business or economic entity that holds monetary value and is expected to provide future economic benefits"
   }
+  {
+  "term" "Liabilities"
+  "definition": "a present financial obligation or debt that a person or company owes to an outside part"
+}
 ];
 const STORAGE_KEY = "study-bloom-progress-v1";
 let cards = [...initialCards];
