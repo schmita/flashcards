@@ -356,7 +356,7 @@ const initialCards = [
     "term": "Liquidity",
     "definition": "A company’s ability to meet short-term financial obligations as they become due."
   }
-];
+]
 const STORAGE_KEY = "study-bloom-progress-v1";
 let cards = [...initialCards];
 let order = cards.map((_, i) => i);
