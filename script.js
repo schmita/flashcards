@@ -186,8 +186,7 @@ const initialCards = [
   {
     "term": "Year-over-Year (YoY)",
     "definition": "A comparison of a metric with the same period one year earlier—for example, this quarter’s revenue compared with the same quarter last year. YoY comparisons help account for some seasonal patterns."
-  }
- },
+  },
   {
     "term": "Assets",
     "definition": "Resources a business owns or controls that are expected to provide future economic benefits."
