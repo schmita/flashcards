@@ -1,6 +1,6 @@
 # Study Bloom — Flashcards
 
-A responsive, pink-accented flashcard website for GitHub Pages. Includes a 24-card deck for Investor Relations / Corporate Finance.
+A responsive, pink-accented flashcard website for GitHub Pages. Includes a 46-card deck for Investor Relations / Corporate Finance.
 
 ## Files
 - `index.html` — page structure
