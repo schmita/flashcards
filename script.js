@@ -196,7 +196,7 @@ const initialCards = [
   "term" "Liabilities"
   "definition": "a present financial obligation or debt that a person or company owes to an outside part"
 }
-];
+]
 const STORAGE_KEY = "study-bloom-progress-v1";
 let cards = [...initialCards];
 let order = cards.map((_, i) => i);
