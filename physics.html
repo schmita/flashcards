@@ -63,8 +63,41 @@ const questions=[
 {q:"For an ideal projectile launched and landing at the same height, which angle maximizes range at fixed speed?",a:["15°","30°","45°","90°"],c:2,e:"R = v₀² sin(2θ)/g is largest when sin(2θ) = 1, so θ = 45°."},
 {q:"Which is the best first step for a projectile-motion problem?",a:["Assume all acceleration is zero","Split velocity into x and y components","Use range formula for every situation","Ignore units"],c:1,e:"Resolve the initial velocity into components and analyze horizontal and vertical motion separately."}
 ];
+const chapterTests = [
+[
+{q:"Which is an SI unit of mass?",a:["Meter","Kilogram","Second","Newton"],c:1,e:"Kilogram (kg) is the SI base unit of mass."},
+{q:"A runner travels 60 m in 6 s. What is the average speed?",a:["10 m/s","360 m/s","0.1 m/s","10 m/s²"],c:0,e:"Average speed = distance ÷ time = 60 ÷ 6 = 10 m/s."},
+{q:"Why should you include units in a calculation?",a:["They make numbers larger","They help check whether a result is physically meaningful","They replace equations","They are only needed for tiny numbers"],c:1,e:"Units help verify that the answer has the correct physical dimensions."},
+{q:"Which expression represents 0.0045 in scientific notation?",a:["45 × 10⁻⁴","4.5 × 10⁻³","4.5 × 10³","0.45 × 10⁻²"],c:1,e:"Move the decimal three places right: 0.0045 = 4.5 × 10⁻³."},
+{q:"The center of mass of a system depends on…",a:["Only its color","How its mass is distributed","Only its speed","The object's temperature in every case"],c:1,e:"Center of mass is a mass-weighted average of position."}
+],
+[
+{q:"A runner completes one full lap and finishes where they started. Their net displacement is…",a:["One lap length","Zero","Their average speed","Always negative"],c:1,e:"Final position equals initial position, so displacement is zero."},
+{q:"A cyclist's velocity changes from 4 m/s to 10 m/s in 3 s. Average acceleration is…",a:["2 m/s²","6 m/s²","14 m/s²","0.5 m/s²"],c:0,e:"a = Δv/Δt = (10 − 4)/3 = 2 m/s²."},
+{q:"The slope of a position-time graph gives…",a:["Acceleration","Mass","Velocity","Force"],c:2,e:"The slope is change in position divided by time: velocity."},
+{q:"Which equation is useful for constant acceleration?",a:["v = v₀ + at","F = mg only","R = v₀²/g for every launch","distance = mass × time"],c:0,e:"v = v₀ + at relates velocity, acceleration, and elapsed time when acceleration is constant."},
+{q:"A negative acceleration means an object is always slowing down. True or false?",a:["True","False"],c:1,e:"False. Whether an object slows down depends on the directions of velocity and acceleration."}
+],
+[
+{q:"Newton's second law is…",a:["ΣF = ma","v = Δx/Δt","P = mv²","ΣF = 0 in every situation"],c:0,e:"Net force equals mass times acceleration."},
+{q:"A 2 kg object has a net force of 6 N. Its acceleration is…",a:["12 m/s²","3 m/s²","4 m/s²","0.33 m/s²"],c:1,e:"a = F/m = 6/2 = 3 m/s²."},
+{q:"Action-reaction force pairs act on…",a:["The same object","Different objects","Only objects at rest","Only moving objects"],c:1,e:"Newton's third-law forces are equal and opposite but act on different objects."},
+{q:"Near Earth's surface, an object's weight is approximately…",a:["m/g","mg","m + g","g/m"],c:1,e:"Weight is the gravitational force: W = mg."},
+{q:"In a free-body diagram for a single athlete, you should draw…",a:["Every force the athlete exerts on other objects","Only external forces acting on the athlete","Action-reaction pairs on the same body","Velocity arrows instead of forces"],c:1,e:"A free-body diagram isolates one object and includes forces acting on that object."}
+],
+[
+{q:"In the ideal projectile model with no air resistance, horizontal acceleration is…",a:["g","Zero","Always equal to vertical velocity","Increasing with time"],c:1,e:"Gravity acts vertically, so horizontal acceleration is zero in this model."},
+{q:"A launch speed is 20 m/s at 30° above horizontal. The horizontal component is approximately…",a:["10 m/s","17.3 m/s","20 m/s","5 m/s"],c:1,e:"v₀x = v₀ cos θ = 20 cos 30° ≈ 17.3 m/s."},
+{q:"At the highest point of a projectile's path…",a:["Both velocity components are zero","Vertical velocity is zero, but gravity still acts","Acceleration is zero","Horizontal velocity must reverse"],c:1,e:"Only the vertical velocity is momentarily zero; acceleration remains downward."},
+{q:"For a projectile launched and landing at the same height, with fixed speed and no air resistance, ideal range is greatest at…",a:["30°","45°","60°","90°"],c:1,e:"The range is proportional to sin(2θ), which is maximum at θ = 45°."},
+{q:"When launch and landing heights differ, the best approach is to…",a:["Always use the same-height range formula","Solve vertical motion for flight time, then use horizontal motion","Ignore gravity","Use only the horizontal equation to find time"],c:1,e:"Find the physically relevant time from the vertical position equation, then calculate horizontal displacement."}
+]
+];
 const chapterEl=document.getElementById('chapter');
-function renderChapter(n){document.querySelectorAll('.tab[data-ch]').forEach(b=>b.classList.toggle('active',Number(b.dataset.ch)===n));const ch=chapters[n];chapterEl.innerHTML='<p class="eyebrow">REVIEW NOTES</p><h2>'+ch.title+'</h2><p class="muted">'+ch.subtitle+'</p><div class="grid">'+ch.cards.map(c=>'<article class="concept"><h3>'+c[0]+'</h3><p>'+c[1]+'</p><div class="callout small">'+c[2]+'</div></article>').join('')+'</div><div class="callout"><strong>Remember:</strong> '+ch.take+'</div>'}
+let chapterTestAnswers = {};
+
+function renderChapter(n){document.querySelectorAll('.tab[data-ch]').forEach(b=>b.classList.toggle('active',Number(b.dataset.ch)===n));const ch=chapters[n];chapterEl.innerHTML='<p class="eyebrow">REVIEW NOTES</p><h2>'+ch.title+'</h2><p class="muted">'+ch.subtitle+'</p><div class="grid">'+ch.cards.map(c=>'<article class="concept"><h3>'+c[0]+'</h3><p>'+c[1]+'</p><div class="callout small">'+c[2]+'</div></article>').join('')+'</div><div class="callout"><strong>Remember:</strong> '+ch.take+'</div>'+(n<4?'<section class="panel" style="margin-top:20px;background:#fffafd;padding:20px"><p class="eyebrow">CHAPTER PRACTICE TEST</p><h2>'+['Chapter 1 Test','Chapter 2 Test','Chapter 3 Test','Chapter 4 Test'][n]+'</h2><p class="muted">5 questions · Choose one answer per question. Check your score and explanations as you go.</p><p class="score" id="chapterScore"></p><div id="chapterQuiz"></div><button class="tab" id="chapterRetry">↻ Retake this chapter test</button></section>':'');if(n<4)renderChapterTest(n)}
+function renderChapterTest(n){const qs=chapterTests[n],answers=chapterTestAnswers[n]||{};const quiz=document.getElementById('chapterQuiz');if(!quiz)return;quiz.innerHTML=qs.map((q,i)=>'<div class="quiz-question"><strong>'+(i+1)+'. '+q.q+'</strong><div class="answers">'+q.a.map((a,j)=>'<button class="answer '+(answers[i]===j?(j===q.c?'correct':'wrong'):'')+'" data-q="'+i+'" data-a="'+j+'" '+(answers[i]!==undefined?'disabled':'')+'>'+String.fromCharCode(65+j)+'. '+a+'</button>').join('')+'</div><div class="feedback">'+(answers[i]!==undefined?q.e:'')+'</div></div>').join('');const score=qs.filter((q,i)=>answers[i]===q.c).length;document.getElementById('chapterScore').textContent=score+' of '+qs.length+' correct';quiz.querySelectorAll('.answer').forEach(b=>b.addEventListener('click',()=>{if(!chapterTestAnswers[n])chapterTestAnswers[n]={};chapterTestAnswers[n][Number(b.dataset.q)]=Number(b.dataset.a);renderChapterTest(n)}));document.getElementById('chapterRetry').addEventListener('click',()=>{chapterTestAnswers[n]={};renderChapterTest(n)})}
 document.querySelectorAll('.tab[data-ch]').forEach(b=>b.addEventListener('click',()=>renderChapter(Number(b.dataset.ch))));
 let picked={};
 function renderQuiz(){document.getElementById('quiz').innerHTML=questions.map((q,i)=>'<div class="quiz-question"><strong>'+ (i+1)+'. '+q.q+'</strong><div class="answers">'+q.a.map((a,j)=>'<button class="answer '+(picked[i]===j?(j===q.c?'correct':'wrong'):'')+'" data-q="'+i+'" data-a="'+j+'" '+(picked[i]!==undefined?'disabled':'')+'>'+String.fromCharCode(65+j)+'. '+a+'</button>').join('')+'</div><div class="feedback">'+(picked[i]!==undefined?q.e:'')+'</div></div>').join('');const score=questions.filter((q,i)=>picked[i]===q.c).length;document.getElementById('score').textContent=score+' of '+questions.length+' correct';document.querySelectorAll('.answer').forEach(b=>b.addEventListener('click',()=>{picked[Number(b.dataset.q)]=Number(b.dataset.a);renderQuiz()}))}
