@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f8">
+<title>Chinese HSK Matching | Study Bloom</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="chinese-game.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon">✿</span> study bloom</a><span class="top-note">Chinese · HSK 1–4</span></header>
+<main class="hsk-page">
+  <a class="back-link" href="index.html">← Back to your library</a>
+  <section class="hsk-intro"><p class="eyebrow">LANGUAGE LEARNING</p><h1>中文 Matching Game <span>♡</span></h1><p class="hsk-subtitle">Match Chinese vocabulary or full sentences with their meaning. Little by little, 一步一步。</p></section>
+  <section class="game-panel">
+    <div class="game-settings">
+      <label>HSK level<select id="level"><option value="1">HSK 1 · Beginner</option><option value="2">HSK 2</option><option value="3">HSK 3</option><option value="4">HSK 4</option><option value="all">HSK 1–4 · Mixed review</option></select></label>
+      <label>Practice mode<select id="mode"><option value="words">Vocabulary · Hanzi ↔ Pinyin + meaning</option><option value="sentences">Sentences · Chinese ↔ English</option></select></label>
+      <button id="newGame" class="soft-button">⤨ New round</button>
+    </div>
+    <div class="game-stats"><div><span class="stat-number" id="matchedCount">0</span><span>matched pairs</span></div><div><span class="stat-number" id="pairTotal">8</span><span>pairs this round</span></div><div><span class="stat-number" id="attemptCount">0</span><span>attempts</span></div></div>
+    <p class="game-instructions" id="instructions">Choose two cards that belong together. Each pair is one Chinese word and its pinyin + meaning.</p>
+    <div id="gameBoard" class="game-board" aria-live="polite"></div>
+    <div id="gameMessage" class="game-message" role="status">Ready when you are! 加油！</div>
+    <div class="game-bottom"><button id="restart" class="nav-button">↺ Restart round</button><span>Tip: say the Chinese aloud as you play.</span></div>
+  </section>
+  <section class="sentence-help"><h2>What you'll practice</h2><div class="help-grid"><article><span>汉字</span><h3>Recognize characters</h3><p>Connect written Chinese to pronunciation and meaning.</p></article><article><span>拼音</span><h3>Build pronunciation</h3><p>Review pinyin with tone marks as you make each match.</p></article><article><span>句子</span><h3>Read in context</h3><p>Switch to sentence mode to match everyday Chinese with English translations.</p></article></div></section>
+  <footer>Made for your next study session <span>♡</span></footer>
+</main>
+<script src="chinese-game.js"></script>
+</body></html>
