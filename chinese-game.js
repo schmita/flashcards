@@ -25,7 +25,7 @@ let selected = [], matched = new Set(), attempts = 0, pairs = [], locked = false
 const shuffle = a => a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
 function pickItems() {
  const wanted = level.value === 'all' ? [1,2,3,4,5,6,7,8] : level.value === 'advanced' ? [6,7,8] : [Number(level.value)];
- const source = (mode.value === 'words' ? words : sentences).filter(x=>wanted.includes(x.l));
+ const source = (mode.value === 'words' ? words : sentences).filter(x => level.value === 'all' ? true : level.value === 'advanced' ? [6,7,8].includes(x.l) : x.l <= Number(level.value));
  return shuffle(source).slice(0, Math.min(8, source.length));
 }
 function start() {
