@@ -1,6 +1,6 @@
 (() => {
 'use strict';
-const words = [
+const fallbackWords = [
 {l:1,zh:'你好',py:'nǐ hǎo',en:'hello'},{l:1,zh:'谢谢',py:'xièxie',en:'thank you'},{l:1,zh:'再见',py:'zàijiàn',en:'goodbye'},{l:1,zh:'朋友',py:'péngyou',en:'friend'},{l:1,zh:'学生',py:'xuésheng',en:'student'},{l:1,zh:'老师',py:'lǎoshī',en:'teacher'},{l:1,zh:'中国',py:'Zhōngguó',en:'China'},{l:1,zh:'今天',py:'jīntiān',en:'today'},{l:1,zh:'明天',py:'míngtiān',en:'tomorrow'},{l:1,zh:'喜欢',py:'xǐhuan',en:'to like'},{l:1,zh:'吃',py:'chī',en:'to eat'},{l:1,zh:'喝',py:'hē',en:'to drink'},
 {l:2,zh:'觉得',py:'juéde',en:'to feel; to think'},{l:2,zh:'一起',py:'yìqǐ',en:'together'},{l:2,zh:'已经',py:'yǐjīng',en:'already'},{l:2,zh:'因为',py:'yīnwèi',en:'because'},{l:2,zh:'所以',py:'suǒyǐ',en:'so; therefore'},{l:2,zh:'时间',py:'shíjiān',en:'time'},{l:2,zh:'问题',py:'wèntí',en:'question; problem'},{l:2,zh:'帮助',py:'bāngzhù',en:'to help'},{l:2,zh:'旅游',py:'lǚyóu',en:'to travel'},{l:2,zh:'准备',py:'zhǔnbèi',en:'to prepare'},{l:2,zh:'考试',py:'kǎoshì',en:'exam; test'},
 {l:3,zh:'当然',py:'dāngrán',en:'of course'},{l:3,zh:'认真',py:'rènzhēn',en:'serious; conscientious'},{l:3,zh:'习惯',py:'xíguàn',en:'habit; to get used to'},{l:3,zh:'参加',py:'cānjiā',en:'to participate'},{l:3,zh:'发现',py:'fāxiàn',en:'to discover; to notice'},{l:3,zh:'需要',py:'xūyào',en:'to need'},{l:3,zh:'终于',py:'zhōngyú',en:'finally'},{l:3,zh:'提高',py:'tígāo',en:'to improve; to raise'},{l:3,zh:'影响',py:'yǐngxiǎng',en:'influence; effect'},{l:3,zh:'选择',py:'xuǎnzé',en:'to choose'},{l:3,zh:'附近',py:'fùjìn',en:'nearby'},{l:3,zh:'放心',py:'fàngxīn',en:'to feel relieved'},
@@ -9,6 +9,7 @@ const words = [
 {l:7,zh:'博大精深',py:'bó dà jīng shēn',en:'broad and profound'},{l:7,zh:'层出不穷',py:'céng chū bù qióng',en:'to emerge endlessly'},{l:7,zh:'触类旁通',py:'chù lèi páng tōng',en:'to infer by analogy'},{l:7,zh:'大刀阔斧',py:'dà dāo kuò fǔ',en:'bold and decisive'},{l:7,zh:'独树一帜',py:'dú shù yī zhì',en:'to be distinctive; to stand alone'},{l:7,zh:'各抒己见',py:'gè shū jǐ jiàn',en:'for everyone to express their views'},{l:7,zh:'举足轻重',py:'jǔ zú qīng zhòng',en:'to be pivotal; to be of great importance'},{l:7,zh:'理所当然',py:'lǐ suǒ dāng rán',en:'as a matter of course'},{l:7,zh:'迫在眉睫',py:'pò zài méi jié',en:'imminent; pressing'},{l:7,zh:'取长补短',py:'qǔ cháng bǔ duǎn',en:'to learn from others’ strengths'},{l:7,zh:'相辅相成',py:'xiāng fǔ xiāng chéng',en:'to complement one another'},{l:7,zh:'循序渐进',py:'xún xù jiàn jìn',en:'to progress step by step'},
 {l:8,zh:'百折不挠',py:'bǎi zhé bù náo',en:'indomitable; never give up despite setbacks'},{l:8,zh:'不言而喻',py:'bù yán ér yù',en:'self-evident'},{l:8,zh:'沧海一粟',py:'cāng hǎi yī sù',en:'a drop in the ocean'},{l:8,zh:'耳濡目染',py:'ěr rú mù rǎn',en:'to be influenced by what one hears and sees'},{l:8,zh:'画龙点睛',py:'huà lóng diǎn jīng',en:'to add the finishing touch'},{l:8,zh:'见微知著',py:'jiàn wēi zhī zhù',en:'to infer the whole from a small clue'},{l:8,zh:'名副其实',py:'míng fù qí shí',en:'to live up to one’s reputation'},{l:8,zh:'逆水行舟',py:'nì shuǐ xíng zhōu',en:'to sail against the current'},{l:8,zh:'融会贯通',py:'róng huì guàn tōng',en:'to thoroughly assimilate and synthesize'},{l:8,zh:'深谋远虑',py:'shēn móu yuǎn lǜ',en:'to plan carefully for the future'},{l:8,zh:'无独有偶',py:'wú dú yǒu ǒu',en:'it is not the only case; similar cases exist'},{l:8,zh:'卓有成效',py:'zhuó yǒu chéng xiào',en:'remarkably effective'}
 ];
+let words = fallbackWords;
 const sentences = [
 {l:1,zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',en:'What is your name?'},{l:1,zh:'我喜欢喝茶。',py:'Wǒ xǐhuan hē chá.',en:'I like drinking tea.'},{l:1,zh:'今天星期几？',py:'Jīntiān xīngqī jǐ?',en:'What day of the week is it today?'},{l:1,zh:'他是我的朋友。',py:'Tā shì wǒ de péngyou.',en:'He is my friend.'},{l:1,zh:'我家有四口人。',py:'Wǒ jiā yǒu sì kǒu rén.',en:'There are four people in my family.'},{l:1,zh:'现在几点？',py:'Xiànzài jǐ diǎn?',en:'What time is it now?'},
 {l:2,zh:'你为什么不去？',py:'Nǐ wèishénme bú qù?',en:'Why aren’t you going?'},{l:2,zh:'我们一起去吃饭吧。',py:'Wǒmen yìqǐ qù chīfàn ba.',en:'Let’s go eat together.'},{l:2,zh:'我已经做完作业了。',py:'Wǒ yǐjīng zuò wán zuòyè le.',en:'I have already finished my homework.'},{l:2,zh:'这个问题不太难。',py:'Zhège wèntí bú tài nán.',en:'This question is not too difficult.'},{l:2,zh:'请你帮我一下。',py:'Qǐng nǐ bāng wǒ yíxià.',en:'Please help me for a moment.'},{l:2,zh:'明天我们去旅游。',py:'Míngtiān wǒmen qù lǚyóu.',en:'We are going traveling tomorrow.'},
@@ -23,7 +24,7 @@ const level = $('level'), mode = $('mode'), board = $('gameBoard');
 let selected = [], matched = new Set(), attempts = 0, pairs = [], locked = false;
 const shuffle = a => a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);
 function pickItems() {
- const wanted = level.value === 'all' ? [1,2,3,4,6,7,8] : level.value === 'advanced' ? [6,7,8] : [Number(level.value)];
+ const wanted = level.value === 'all' ? [1,2,3,4,5,6,7,8] : level.value === 'advanced' ? [6,7,8] : [Number(level.value)];
  const source = (mode.value === 'words' ? words : sentences).filter(x=>wanted.includes(x.l));
  return shuffle(source).slice(0, Math.min(8, source.length));
 }
@@ -64,5 +65,8 @@ function choose(btn) {
 }
 $('newGame').addEventListener('click',start); $('restart').addEventListener('click',start);
 level.addEventListener('change',start); mode.addEventListener('change',start);
-start();
+fetch('hsk-vocabulary.json')
+ .then(response => { if (!response.ok) throw new Error('Vocabulary database could not be loaded'); return response.json(); })
+ .then(data => { if (!Array.isArray(data) || !data.length) throw new Error('Vocabulary database is empty'); words = data; start(); })
+ .catch(() => { words = fallbackWords; start(); });
 })();
