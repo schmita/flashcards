@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f8">
+<title>HSK Vocabulary | Study Bloom</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="vocabulary.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon">✿</span> study bloom</a><span class="top-note">Chinese · HSK 1–8</span></header>
+<main class="vocabulary-page">
+  <a class="back-link" href="index.html">← Back to your library</a>
+  <section class="hsk-intro">
+    <p class="eyebrow">LANGUAGE LEARNING</p>
+    <h1>HSK Vocabulary <span>♡</span></h1>
+    <p class="hsk-subtitle">Browse the complete vocabulary database by level, or search Chinese characters, pinyin, and English meanings.</p>
+  </section>
+  <section class="vocabulary-panel" aria-labelledby="word-list-title">
+    <div class="vocabulary-controls">
+      <label class="vocabulary-search" for="word-search"><span aria-hidden="true">⌕</span><input id="word-search" type="search" placeholder="Search Chinese, pinyin, or English…" autocomplete="off"></label>
+      <label class="level-filter" for="level-filter">HSK level
+        <select id="level-filter">
+          <option value="all">All levels (1–8)</option>
+          <option value="1">HSK 1</option><option value="2">HSK 2</option><option value="3">HSK 3</option><option value="4">HSK 4</option>
+          <option value="5">HSK 5</option><option value="6">HSK 6</option><option value="7">HSK 7 · Extension</option><option value="8">HSK 8 · Extension</option>
+        </select>
+      </label>
+    </div>
+    <div class="vocabulary-summary"><h2 id="word-list-title">Word list</h2><span id="result-count" role="status" aria-live="polite">Loading vocabulary…</span></div>
+    <div class="word-table-wrap">
+      <table class="word-table">
+        <thead><tr><th scope="col">Level</th><th scope="col">Chinese</th><th scope="col">Pinyin</th><th scope="col">English</th></tr></thead>
+        <tbody id="word-list"><tr><td colspan="4" class="table-message">Loading vocabulary…</td></tr></tbody>
+      </table>
+    </div>
+    <nav class="pagination" aria-label="Vocabulary pages">
+      <button id="previous-page" type="button" class="soft-button">← Previous</button>
+      <span id="page-label">Page 1</span>
+      <button id="next-page" type="button" class="soft-button">Next →</button>
+    </nav>
+  </section>
+  <p class="vocabulary-note">HSK 1–6 follows the original six-level list. HSK 7–8 entries are a curated advanced extension, not official levels in that standard.</p>
+  <footer>Made for your next study session <span>♡</span></footer>
+</main>
+<script src="vocabulary.js"></script>
+</body>
+</html>
