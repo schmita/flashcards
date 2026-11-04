@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f8">
+<title>Agency Management | Study Bloom</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.agency-intro{margin:0 0 22px}.agency-intro p:last-child{max-width:680px;color:var(--muted);font-size:13px;line-height:1.8}
+.agency-note{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 15px;color:var(--muted);font-size:12px;line-height:1.7;margin-top:22px}
+.subject-link{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.flashcard{min-height:350px}
+@media(max-width:760px){.flashcard{min-height:320px}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon">✿</span> study bloom</a><span class="top-note">Agency Management · 17 terms</span></header>
+<main class="layout">
+<aside class="sidebar">
+<p class="eyebrow">YOUR LIBRARY</p><h2>Subjects</h2>
+<a class="subject subject-link" href="index.html"><span>♡</span><span>Investor Relations<br><small>Corporate Finance</small></span><b>88</b></a>
+<a class="subject subject-link" href="agency-management.html" aria-current="page" style="margin-top:9px"><span>✿</span><span>Agency Management<br><small>Agency operations + fees</small></span><b>17</b></a>
+<a class="subject subject-link" href="chinese.html" style="margin-top:9px"><span>中</span><span>Chinese HSK 1–4<br><small>Vocabulary + sentence matching</small></span><b>4</b></a>
+<a class="subject subject-link" href="vocabulary.html" style="margin-top:9px"><span>字</span><span>HSK Vocabulary<br><small>Browse all levels 1–8</small></span><b>5,015</b></a>
+<a class="subject subject-link" href="physics.html" style="margin-top:9px"><span>📚</span><span>Physics Chapters<br><small>Chapters 1–4 Review</small></span><b>4</b></a>
+<a class="subject subject-link" href="physics-exam.html" style="margin-top:9px"><span>✎</span><span>Physics Exam<br><small>50-question practice exam</small></span><b>50</b></a>
+<div class="sidebar-tip"><span>✧</span><p><strong>Little by little.</strong><br>Every card is a step forward.</p></div>
+<p class="small-note">Review agency structures, client relationships, pricing models, and the procurement process.</p>
+</aside>
+<section class="study">
+<div class="agency-intro"><p class="eyebrow">CURRENT DECK</p><h1>Agency Management <span>♡</span></h1><p>Learn how agencies are structured, how client work is priced, and how organizations select agency partners.</p></div>
+<div class="heading-row"><div><p class="subheading">Agency operations · 17 cards</p></div><div class="streak">✧ <span id="knownCount">0</span> mastered</div></div>
+<div class="toolbar"><label class="search"><span>⌕</span><input id="search" placeholder="Find a term..." aria-label="Search terms"></label><button id="shuffle" class="soft-button">⤨ Shuffle</button><button id="reset" class="soft-button">↺ Reset</button></div>
+<div class="progress-wrap"><div class="progress-label"><span id="progressText">Card 1 of 17</span><span id="percent">0% mastered</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+<button class="flashcard" id="flashcard" aria-label="Flip flashcard" aria-pressed="false"><span class="card-top"><span id="sideLabel">TERM</span><span>CLICK TO FLIP ↻</span></span><span class="card-center"><span class="sparkle">✧</span><span id="cardText">Agency holding company</span></span><span class="card-bottom"><span id="cardIndex">01 / 17</span><span id="flipHint">Tap to reveal definition</span></span></button>
+<div class="controls"><button class="nav-button" id="prev">← Previous</button><button class="nav-button primary" id="next">Next card →</button></div>
+<div class="recall"><p>Did you know this one?</p><div><button class="recall-btn nope" id="review">↻ Need to review</button><button class="recall-btn yep" id="mastered">♡ Got it!</button></div></div>
+<section class="all-cards"><div class="list-heading"><div><p class="eyebrow">QUICK REVIEW</p><h2>All your terms</h2></div><span id="listCount">17 terms</span></div><div id="termList" class="term-list"></div></section>
+<div class="agency-note">Study tip: Pay attention to the differences between a retainer, project-based work, fee-based work, and performance-based compensation. They describe different ways an agency scopes and earns revenue.</div>
+<footer>Made for your next study session <span>♡</span></footer>
+</section></main>
+<script>
+const cards = [
+{term:"Agency holding company",definition:"A parent organization that owns or controls multiple agencies and related marketing or communications businesses. It may provide shared services such as finance, technology, talent, and strategy while its agencies serve clients under different brands."},
+{term:"Agency of record (AOR)",definition:"The agency formally appointed by a client to lead or manage an ongoing area of work, such as advertising, public relations, or media planning. The exact responsibilities, exclusivity, and term are defined in the client-agency agreement."},
+{term:"Agency search",definition:"The process a client uses to identify, evaluate, and select an agency partner. It may include defining needs, researching agencies, issuing an RFI or RFP, reviewing proposals, interviewing teams, and negotiating an agreement."},
+{term:"Billable hours",definition:"Time an agency employee spends on client work that can be charged to the client under the engagement agreement. Agencies track billable time to understand project costs, staff utilization, and profitability."},
+{term:"Billing rate",definition:"The amount an agency charges a client for a unit of work, commonly an hour of an employee's time. Rates may vary by role, seniority, specialty, or agreement and are not the same as the employee's wage."},
+{term:"Business model",definition:"The way an agency creates, delivers, and captures value. It describes how the agency serves clients, organizes its capabilities, generates revenue, and manages costs."},
+{term:"Equity ownership model",definition:"An ownership structure in which shares or other equity interests in an agency are held by founders, employees, investors, a parent company, or some combination. Ownership can affect governance, incentives, and how profits or sale proceeds are distributed."},
+{term:"Fee-based work",definition:"Client work compensated through an agreed fee for defined services or scope. The fee may be fixed, hourly, or otherwise structured in the contract; payment is generally tied to the services delivered rather than a specific performance result."},
+{term:"Full-service agency",definition:"An agency that offers a broad range of services—potentially including strategy, creative, advertising, public relations, digital, media, and analytics—so a client can coordinate multiple needs through one partner."},
+{term:"In-house agency",definition:"A creative, marketing, advertising, or communications team that operates within a client organization rather than as an independent outside agency. It is managed by the organization and may work alongside external agencies."},
+{term:"Performance-based model",definition:"A compensation approach in which some or all agency payment depends on achieving agreed outcomes or metrics, such as qualified leads, sales, or other campaign results. The contract should define measurement, attribution, targets, and factors outside the agency's control."},
+{term:"Project-based work",definition:"An engagement organized around a specific assignment with defined deliverables, scope, timeline, and usually a project fee or estimate. The relationship may end when the agreed project is completed."},
+{term:"Primary agency",definition:"The main agency a client relies on to lead or coordinate a particular function or group of agency partners. The term is often client-specific and does not automatically mean the agency has exclusive responsibility for all work."},
+{term:"Procurement and sourcing",definition:"The processes an organization uses to identify, evaluate, select, and contract with suppliers, including agencies. Procurement may assess cost, capabilities, risk, compliance, contractual terms, and overall value."},
+{term:"Request for information (RFI)",definition:"A document sent to potential agencies to gather preliminary information about their capabilities, experience, services, qualifications, and approach. It helps a client understand the market and decide which agencies to invite to a more detailed selection process."},
+{term:"Request for proposal (RFP)",definition:"A formal document inviting agencies to submit a proposal for a defined business need. It typically outlines objectives, scope, requirements, timeline, evaluation criteria, and submission instructions so proposals can be compared."},
+{term:"Retainer",definition:"An ongoing arrangement in which a client pays an agency a recurring fee—often monthly—for an agreed level of services, access, or capacity. The agreement should clarify included work, limits, additional fees, term, and cancellation conditions."}
+];
+const KEY="study-bloom-agency-management-v1";
+let order=cards.map((_,i)=>i),current=0,flipped=false,filter="";
+function load(){try{const p=JSON.parse(localStorage.getItem(KEY)||"{}");return{mastered:Array.isArray(p.mastered)?p.mastered.filter(i=>Number.isInteger(i)&&i>=0&&i<cards.length):[],review:Array.isArray(p.review)?p.review.filter(i=>Number.isInteger(i)&&i>=0&&i<cards.length):[]}}catch{return{mastered:[],review:[]}}}
+let progress=load();const $=id=>document.getElementById(id);
+function visible(){return order.filter(i=>(cards[i].term+" "+cards[i].definition).toLowerCase().includes(filter.toLowerCase()))}
+function active(){const list=visible();return list.length?list[Math.min(current,list.length-1)]:-1}
+function save(){localStorage.setItem(KEY,JSON.stringify(progress))}
+function renderCard(){const list=visible(),idx=active();if(idx<0){$("cardText").textContent="No matching terms";$("sideLabel").textContent="SEARCH";$("cardIndex").textContent="—";$("progressText").textContent="0 cards found";$("flipHint").textContent="Try another search";$("flashcard").classList.remove("flipped");$("flashcard").setAttribute("aria-pressed","false");return}const c=cards[idx];$("cardText").textContent=flipped?c.definition:c.term;$("sideLabel").textContent=flipped?"DEFINITION":"TERM";$("cardIndex").textContent=String(current+1).padStart(2,"0")+" / "+list.length;$("progressText").textContent="Card "+(current+1)+" of "+list.length;$("flipHint").textContent=flipped?"Tap to see term":"Tap to reveal definition";$("flashcard").classList.toggle("flipped",flipped);$("flashcard").setAttribute("aria-pressed",String(flipped))}
+function render(){const n=progress.mastered.length;$("knownCount").textContent=n;$("percent").textContent=Math.round(n/cards.length*100)+"% mastered";$("progressBar").style.width=(n/cards.length*100)+"%";renderCard();$("listCount").textContent=cards.length+" terms";const host=$("termList");host.innerHTML="";order.forEach((idx,n)=>{const c=cards[idx],row=document.createElement("button");row.className="term-row"+(progress.mastered.includes(idx)?" mastered":"")+(idx===active()?" selected":"");row.innerHTML='<span class="number">'+String(n+1).padStart(2,"0")+'</span><span class="term-content"><span class="term-name"></span><span class="term-def"></span></span><span class="status">'+(progress.mastered.includes(idx)?"♡":progress.review.includes(idx)?"↻":"›")+'</span>';row.querySelector(".term-name").textContent=c.term;row.querySelector(".term-def").textContent=c.definition;row.addEventListener("click",()=>{filter="";$("search").value="";current=order.indexOf(idx);flipped=false;render()});host.appendChild(row)})}
+function go(d){const list=visible();if(!list.length)return;current=(current+d+list.length)%list.length;flipped=false;render()}
+$("flashcard").addEventListener("click",()=>{if(active()<0)return;flipped=!flipped;renderCard()});$("prev").addEventListener("click",()=>go(-1));$("next").addEventListener("click",()=>go(1));
+$("shuffle").addEventListener("click",()=>{for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}current=0;flipped=false;render()});
+$("reset").addEventListener("click",()=>{if(confirm("Reset your mastered/review progress for Agency Management?")){progress={mastered:[],review:[]};save();current=0;flipped=false;render()}});
+$("search").addEventListener("input",e=>{filter=e.target.value;current=0;flipped=false;render()});
+$("mastered").addEventListener("click",()=>{const i=active();if(i<0)return;progress.mastered=[...new Set([...progress.mastered,i])];progress.review=progress.review.filter(x=>x!==i);save();go(1)});
+$("review").addEventListener("click",()=>{const i=active();if(i<0)return;progress.review=[...new Set([...progress.review,i])];progress.mastered=progress.mastered.filter(x=>x!==i);save();go(1)});
+document.addEventListener("keydown",e=>{if(e.target.matches("input"))return;if(e.code==="Space"){e.preventDefault();$("flashcard").click()}if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1)});
+render();
+</script>
+</body></html>
