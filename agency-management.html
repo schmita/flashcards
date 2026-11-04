@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon">✿</span> study bloom</a><span class="top-note">Agency Management · 19 terms</span></header>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-icon">✿</span> study bloom</a><span class="top-note">Agency Management · 33 terms</span></header>
 <main class="layout">
 <aside class="sidebar">
 <p class="eyebrow">YOUR LIBRARY</p><h2>Subjects</h2>
@@ -29,13 +29,13 @@
 </aside>
 <section class="study">
 <div class="agency-intro"><p class="eyebrow">CURRENT DECK</p><h1>Agency Management <span>♡</span></h1><p>Learn how agencies are structured, how client work is priced, and how organizations select agency partners.</p></div>
-<div class="heading-row"><div><p class="subheading">Agency operations · 19 cards</p></div><div class="streak">✧ <span id="knownCount">0</span> mastered</div></div>
+<div class="heading-row"><div><p class="subheading">Agency operations · 33 cards</p></div><div class="streak">✧ <span id="knownCount">0</span> mastered</div></div>
 <div class="toolbar"><label class="search"><span>⌕</span><input id="search" placeholder="Find a term..." aria-label="Search terms"></label><button id="shuffle" class="soft-button">⤨ Shuffle</button><button id="reset" class="soft-button">↺ Reset</button></div>
-<div class="progress-wrap"><div class="progress-label"><span id="progressText">Card 1 of 19</span><span id="percent">0% mastered</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
-<button class="flashcard" id="flashcard" aria-label="Flip flashcard" aria-pressed="false"><span class="card-top"><span id="sideLabel">TERM</span><span>CLICK TO FLIP ↻</span></span><span class="card-center"><span class="sparkle">✧</span><span id="cardText">Agency holding company</span></span><span class="card-bottom"><span id="cardIndex">01 / 19</span><span id="flipHint">Tap to reveal definition</span></span></button>
+<div class="progress-wrap"><div class="progress-label"><span id="progressText">Card 1 of 33</span><span id="percent">0% mastered</span></div><div class="progress-track"><div id="progressBar"></div></div></div>
+<button class="flashcard" id="flashcard" aria-label="Flip flashcard" aria-pressed="false"><span class="card-top"><span id="sideLabel">TERM</span><span>CLICK TO FLIP ↻</span></span><span class="card-center"><span class="sparkle">✧</span><span id="cardText">Agency holding company</span></span><span class="card-bottom"><span id="cardIndex">01 / 33</span><span id="flipHint">Tap to reveal definition</span></span></button>
 <div class="controls"><button class="nav-button" id="prev">← Previous</button><button class="nav-button primary" id="next">Next card →</button></div>
 <div class="recall"><p>Did you know this one?</p><div><button class="recall-btn nope" id="review">↻ Need to review</button><button class="recall-btn yep" id="mastered">♡ Got it!</button></div></div>
-<section class="all-cards"><div class="list-heading"><div><p class="eyebrow">QUICK REVIEW</p><h2>All your terms</h2></div><span id="listCount">19 terms</span></div><div id="termList" class="term-list"></div></section>
+<section class="all-cards"><div class="list-heading"><div><p class="eyebrow">QUICK REVIEW</p><h2>All your terms</h2></div><span id="listCount">33 terms</span></div><div id="termList" class="term-list"></div></section>
 <div class="agency-note">Study tip: Pay attention to the differences between a retainer, project-based work, fee-based work, and performance-based compensation. They describe different ways an agency scopes and earns revenue.</div>
 <footer>Made for your next study session <span>♡</span></footer>
 </section></main>
@@ -47,6 +47,20 @@ const cards = [
 {term:"Billable hours",definition:"Time an agency employee spends on client work that can be charged to the client under the engagement agreement. Agencies track billable time to understand project costs, staff utilization, and profitability."},
 {term:"Billing rate",definition:"The amount an agency charges a client for a unit of work, commonly an hour of an employee's time. Rates may vary by role, seniority, specialty, or agreement and are not the same as the employee's wage."},
 {term:"Business model",definition:"The way an agency creates, delivers, and captures value. It describes how the agency serves clients, organizes its capabilities, generates revenue, and manages costs."},
+{term:"Agency-side business model",definition:"A business model in which an organization hires an external agency for specialized services such as advertising, public relations, marketing, or communications. The agency serves multiple clients and earns revenue through arrangements such as retainers, project fees, hourly billing, or performance-based compensation."},
+{term:"Business-to-business (B2B)",definition:"A type of commerce in which one business provides products or services to another business. Agency services are commonly B2B because agencies work with organizations rather than selling directly to individual consumers."},
+{term:"Business-to-consumer (B2C)",definition:"A type of commerce in which a business sells products or services directly to individual consumers. B2C marketing and communications focus on reaching, engaging, and influencing those end customers."},
+{term:"Calendar year",definition:"A 12-month period that begins January 1 and ends December 31. Organizations may use the calendar year for reporting, planning, and budgeting, although their fiscal year may follow a different schedule."},
+{term:"Chief communications officer (CCO)",definition:"A senior executive responsible for an organization's communications strategy and reputation. The role may oversee public relations, media relations, internal communications, executive communications, and other efforts to build understanding and trust with key audiences."},
+{term:"Chief corporate affairs officer (CCAO)",definition:"A senior executive who leads an organization's corporate affairs function, often bringing together areas such as public affairs, government relations, communications, corporate reputation, and stakeholder engagement. The exact responsibilities vary by organization."},
+{term:"Chief financial officer (CFO)",definition:"The senior executive responsible for an organization's financial strategy and oversight. Typical responsibilities include financial planning, budgeting, accounting, reporting, risk management, and advising leadership on financial performance."},
+{term:"Chief human resources officer (CHRO)",definition:"The senior executive who leads an organization's human resources and people strategy. Responsibilities commonly include talent acquisition, employee development, compensation and benefits, workplace culture, employee relations, and workforce planning."},
+{term:"Chief information officer (CIO)",definition:"The senior executive responsible for an organization's information technology strategy and systems. The role commonly oversees technology operations, infrastructure, cybersecurity coordination, enterprise systems, and technology investments."},
+{term:"Chief marketing officer (CMO)",definition:"The senior executive responsible for an organization's marketing strategy and activities. Responsibilities may include brand management, advertising, market research, customer insights, digital marketing, and demand generation."},
+{term:"C-suite",definition:"The group of an organization's most senior executives, whose titles commonly begin with “chief,” such as CEO, CFO, CMO, and CHRO. C-suite leaders set organizational strategy and make high-level decisions across their areas of responsibility."},
+{term:"Fiscal year",definition:"A 12-month accounting and reporting period an organization uses for budgeting and financial statements. It does not have to align with the calendar year and may begin in any month, depending on the organization's needs or applicable requirements."},
+{term:"In-house-side business model",definition:"A model in which an organization performs marketing, communications, or creative work through its own employees rather than relying entirely on an outside agency. The organization funds and manages the internal team, which typically focuses on its employer's priorities."},
+{term:"Zero-based budgeting (ZBB)",definition:"A budgeting method in which each new budget period starts from a zero base. Teams must justify expenses and funding requests rather than automatically carrying forward the previous period's budget, helping leaders evaluate costs and priorities."},
 {term:"Equity ownership model",definition:"An ownership structure in which shares or other equity interests in an agency are held by founders, employees, investors, a parent company, or some combination. Ownership can affect governance, incentives, and how profits or sale proceeds are distributed."},
 {term:"Fee-based work",definition:"Client work compensated through an agreed fee for defined services or scope. The fee may be fixed, hourly, or otherwise structured in the contract; payment is generally tied to the services delivered rather than a specific performance result."},
 {term:"Full-service agency",definition:"An agency that offers a broad range of services—potentially including strategy, creative, advertising, public relations, digital, media, and analytics—so a client can coordinate multiple needs through one partner."},
