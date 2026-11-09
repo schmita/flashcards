@@ -351,6 +351,51 @@ const initialCards = [
     "term": "Liquidity",
     "definition": "A company’s ability to meet short-term financial obligations as they become due."
   }
+,
+  {
+    "term": "Capitalism",
+    "definition": "An economic system in which individuals and businesses privately own resources and produce goods or services for profit, with markets guiding many decisions."
+  },
+  {
+    "term": "Cause Marketing",
+    "definition": "A marketing partnership linking a company or brand with a social cause, often connecting purchases or campaigns to support for that cause."
+  },
+  {
+    "term": "CEO Activism",
+    "definition": "When a chief executive publicly takes a position or speaks out on a social, political, or environmental issue."
+  },
+  {
+    "term": "Corporate Philanthropy",
+    "definition": "A company’s voluntary support of charitable causes through donations, grants, employee volunteering, or in-kind contributions."
+  },
+  {
+    "term": "Corporate Social Advocacy (CSA)",
+    "definition": "When a company publicly supports or opposes a specific social or political issue, often taking a clear position in public debate."
+  },
+  {
+    "term": "Corporate Social Responsibility (CSR)",
+    "definition": "A company’s commitment to managing its social, environmental, and ethical impacts while considering stakeholders and the communities it affects."
+  },
+  {
+    "term": "Diversity, Equity, and Inclusion (DEI)",
+    "definition": "Practices that support representation of different identities, fair access and opportunity, and a workplace where people feel respected and included."
+  },
+  {
+    "term": "Employee Activism",
+    "definition": "When employees use their voices or collective actions to push an employer or society to address workplace, social, political, or environmental issues."
+  },
+  {
+    "term": "Environmental Scanning",
+    "definition": "The ongoing process of monitoring internal and external trends, events, and forces that may affect an organization and its decisions."
+  },
+  {
+    "term": "Environmental, Social, and Governance (ESG)",
+    "definition": "A framework for evaluating an organization’s environmental impact, social practices, and governance, often used in risk and investment analysis."
+  },
+  {
+    "term": "Socialism",
+    "definition": "An economic and political system in which key resources or industries are socially or publicly owned or controlled, with an emphasis on reducing economic inequality."
+  }
 ];
 
 const STORAGE_KEY = "study-bloom-progress-v1";
